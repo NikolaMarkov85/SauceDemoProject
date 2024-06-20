@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 
 
-public class FooterTest extends BaseTest    {
-    String validUsername="standard_user";
-    String validPassword="secret_sauce";
+public class FooterTest extends BaseTest {
+    String validUsername = "standard_user";
+    String validPassword = "secret_sauce";
 
 
     @BeforeMethod
@@ -23,20 +23,21 @@ public class FooterTest extends BaseTest    {
         loginPage.insertPassword(validPassword);
         loginPage.clickLoginButton();
     }
+
     @Test
-    public void userCanClickSocialLinks(){
-        //footerPage.clickTwiter();
+    public void userCanClickSocialLinks() {
+
         footerPage.clickOnLinks();
-       // switchToNewWindow();
-        ArrayList<String>listaTabova=new ArrayList<>(driver.getWindowHandles());
-        //Assert.assertEquals(driver.getCurrentUrl(),"https://x.com/saucelabs");
-        Assert.assertEquals(driver.switchTo().window(listaTabova.get(3)).getCurrentUrl(),"https://x.com/saucelabs");
-        Assert.assertEquals(driver.switchTo().window(listaTabova.get(2)).getCurrentUrl(),"https://www.facebook.com/saucelabs");
-        Assert.assertEquals(driver.switchTo().window(listaTabova.get(1)).getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
+
+        ArrayList<String> listaTabova = new ArrayList<>(driver.getWindowHandles());
+
+        Assert.assertEquals(driver.switchTo().window(listaTabova.get(3)).getCurrentUrl(), "https://x.com/saucelabs");
+        Assert.assertEquals(driver.switchTo().window(listaTabova.get(2)).getCurrentUrl(), "https://www.facebook.com/saucelabs");
+        Assert.assertEquals(driver.switchTo().window(listaTabova.get(1)).getCurrentUrl(), "https://www.linkedin.com/company/sauce-labs/");
     }
 
-   @AfterMethod
-    public void teardown(){
+    @AfterMethod
+    public void teardown() {
         driver.quit();
     }
 
@@ -47,16 +48,11 @@ public class FooterTest extends BaseTest    {
 
 
 
-
-
-
-
-
-
-
-
-
-
+//@Test1 public void idi na Twiter{
+//footerPage.clickTwiter();
+// switchToNewWindow();
+//Assert.assertEquals(driver.getCurrentUrl(),"https://x.com/saucelabs");
+//}
 
 
 /*@Test
@@ -72,4 +68,5 @@ public class FooterTest extends BaseTest    {
         switchToNewWindow();
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.linkedin.com/company/sauce-labs/");
     }*/
+
 }

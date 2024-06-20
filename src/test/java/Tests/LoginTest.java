@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
         driver.get("https://www.saucedemo.com/");
 
     }
-    @Test
+    @Test(priority = 10)
 
     public void userCanLoginWithValidCredentials(){
         loginPage.insertUsername(validUsername);
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(homePage.getSwaglabLogo().getText(),"Swag Labs");
 
     }
-    @Test
+    @Test (priority = 20)
     public void userCanotLoginInvalidUsernameFirstLetterUpper(){
 
         loginPage.insertUsername(userNameFirstLetterisUpper);
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.getLoginButton().isDisplayed());
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match any user in this service");
     }
-    @Test
+    @Test(priority = 30)
     public void userCannotLoginInvalidUsernamAllUpper(){
         loginPage.insertUsername(userNameAllUppercase);
         loginPage.insertPassword(validPassword);
@@ -51,7 +51,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match any user in this service");
 
     }
-    @Test
+    @Test (priority = 40)
     public void userCanotLoginInvalidPassword(){
         loginPage.insertUsername(validUsername);
         loginPage.insertPassword(invalidPassword);
@@ -59,7 +59,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.getLoginButton().isDisplayed());
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match any user in this service");
     }
-    @Test
+    @Test(priority = 50)
     public void userCannotLoginInvalidusernameInvalidpassword(){
         loginPage.insertUsername(invalidUsername);
         loginPage.insertPassword(invalidPassword);
@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match " +
                 "any user in this service");
     }
-    @Test
+    @Test(priority = 60)
     public void usercannotLoginValidUsernamePasswordUppercase(){
         loginPage.insertUsername(validUsername);
         loginPage.insertPassword(passwordALLUppercase);
@@ -77,7 +77,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match " +
                 "any user in this service");
     }
-    @Test
+    @Test(priority = 70)
     public void userCannotLoginValidUsernamePAsswordFirstletterUpper(){
         loginPage.insertUsername(validUsername);
         loginPage.insertPassword(passwordFirstletterUpper);
@@ -86,7 +86,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getError().getText(),"Epic sadface: Username and password do not match " +
                 "any user in this service");
     }
-    @Test
+    @Test(priority = 80)
     public void userCannotLoginUsernameAllUpperPasswordAllUpper(){
         loginPage.insertUsername(userNameAllUppercase);
         loginPage.insertPassword(passwordALLUppercase);

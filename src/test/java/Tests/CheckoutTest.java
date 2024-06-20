@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class CheckoutTest extends BaseTest {
     String validUsername="standard_user";
     String validPassword="secret_sauce";
-
+//-----------------------------------------
 public void goToCheckOut(){
     homePage.addProductInCart("Sauce Labs Backpack");
     homePage.addProductInCart("Sauce Labs Fleece Jacket");
@@ -21,6 +21,7 @@ public void goToCheckOut(){
     checkOutPage.insertZipField();
     checkOutPage.clickConntinue();
 }
+//------------------------------------------
     @BeforeMethod
     public void pageSetup() {
         driver.manage().window().maximize();

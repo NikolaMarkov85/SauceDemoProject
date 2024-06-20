@@ -46,12 +46,15 @@ public class CheckOutPage {
 
     //----------------------------------------------------------
     public void insertNameField(){
+        getFirstNameField().clear();
         getFirstNameField().sendKeys("Nikola");
     }
     public void insertLAstnameField(){
+        getLastNameField().clear();
         getLastNameField().sendKeys("MArkov");
     }
     public void insertZipField(){
+        getZipField().clear();
         getZipField().sendKeys("032");
     }
     public void clickConntinue(){
