@@ -74,5 +74,6 @@ public class CheckoutOverview {
         DecimalFormat df = new DecimalFormat("#.##");
        roundValue  = Double.valueOf(df.format(roundValue));
        return roundValue;
+
     }
 }

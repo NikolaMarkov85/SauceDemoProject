@@ -64,7 +64,6 @@ public class BaseTest {
         homePage.clickResetAppState();
         driver.navigate().refresh();
     }
-
     @AfterClass
     public void quit(){
         driver.quit();

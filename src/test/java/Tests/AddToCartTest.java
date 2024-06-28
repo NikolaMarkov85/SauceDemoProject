@@ -19,6 +19,7 @@ public class AddToCartTest extends BaseTest {
         loginPage.insertUsername(validUsername);
         loginPage.insertPassword(validPassword);
         loginPage.clickLoginButton();
+
     }
     @Test
     public void userCanAddToCart(){

@@ -138,8 +138,6 @@ public void goToCheckOut(){
         finalCheckoutPage.clickBackToHome();
         Assert.assertEquals(homePage.getProducts().getText(),"Products");
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
-
-
     }
     @AfterMethod
     public void teardown(){
